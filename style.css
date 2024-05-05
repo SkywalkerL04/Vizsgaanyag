@@ -1,0 +1,162 @@
+body {
+    font-family: fantasy;
+    margin: 0;
+    padding: 0;
+    width: 98.4vw;
+    min-height: 99.9vh; 
+    position: relative;
+    display: grid;
+        grid-template-rows: 10vh 80vh 20vh;
+        grid-template-columns: 100vw;
+        grid-template: 
+        "header"
+        "main"
+        "footer"
+        ;
+
+}
+header, footer {
+    background-color: #c78c16;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%; 
+    position: absolute;
+}
+header {
+    display: grid;
+    grid-area: header;
+    top: 0; 
+    position: fixed;
+    border-bottom: 2px solid #a77613;
+    font-size: 200%;
+}
+        .profilkep {
+            width: 5vw;
+            position: relative;
+            border-radius: 50%;
+            transition: transform 0.5s ease-in-out; 
+        }
+                    .profilkep:hover {
+                        transform: rotate(360deg);
+                    }
+        .profilkepdiv {
+            float: left;
+            margin-left: 6vw;
+        }                
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a {
+            color: white;
+        }
+        sup {
+            font-size: x-small;
+        }
+
+main {
+    display: grid;
+    grid-area: main;
+/*     padding: 20px; */
+/*     margin-top: 20vh; */
+    margin-bottom: 50px; /* a margin hozzáadása, hogy a tartalom ne fedje el a footert */
+    margin-left: 3%;
+    color: #9d6900;
+}
+footer {
+    display: grid;
+        grid-template-columns: 80vw 20vw;
+        grid-template: 
+        "bal jobb"
+        ;
+    grid-area: footer;
+    bottom: 0; 
+    border-top: 2px solid #a77613;
+}
+        .message {
+            display: grid;
+            grid-area: jobb;
+
+            text-align: center;
+            margin-right: 10%;
+        }
+            .messageszoveg {
+                height: 10vh;
+                background-image: url(./img/envelope\ 0hatter.png);
+                    background-size: contain; /* This line ensures the image fits within the input box */
+                    background-repeat: no-repeat; /* This line prevents the image from repeating */
+                    background-position: right; /* This line centers the image within the input box */
+/*                     opacity: 0.5;
+ */            }
+        .footerlink {
+            margin-right: 10%;
+        }
+        .footerbal {
+            display: grid;
+            grid-area: bal;
+            word-spacing: 200%;
+        }
+        .sendbutton {
+            font-family: fantasy;
+            color: #9d6900;
+        }
+.active {
+    text-decoration: underline;
+}
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Alap stílusok */
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 800px;
+}
+
+.image {
+    scroll-snap-align: center;
+    min-width: 300px;
+    max-width: 400px;
+    height: auto;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+.image .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image:hover .caption {
+    opacity: 1;
+}
