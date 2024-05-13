@@ -16,7 +16,8 @@ body {
 
 }
 header, footer {
-    background-color: #c78c16;
+    /* background-color: #c78c16; */
+    background: linear-gradient(to right, #c78c16, #e5cd76);
     color: white;
     padding: 10px;
     text-align: center;
@@ -69,11 +70,18 @@ main {
     display: grid;
     grid-area: main;
 /*     padding: 20px; */
-/*     margin-top: 20vh; */
-    margin-bottom: 5%; /* a margin hozzáadása, hogy a tartalom ne fedje el a footert */
+    margin-bottom: 5%;
     margin-left: 3%;
     color: #9d6900;
 }
+        h1{
+            margin-top: 20vh;
+            text-align: center;
+        }
+        .introh1 {
+            margin-top: 10vh;
+            text-align: center;
+        }
 footer {
     display: grid;
         grid-template-columns: 80vw 20vw;
@@ -102,7 +110,7 @@ footer {
                     background-position: right;
                     }
         .footerlink {
-            margin-right: 10%;
+            margin-right: 8%;
             text-decoration: italic;
         }
         .footerbal {
@@ -117,49 +125,136 @@ footer {
 .active {
     text-decoration: underline;
 }
-/* --------------------------------------------------------------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
-/* Alap stílusok */
-.gallery {
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/* MOC ---------------------------------------------------------------------------------------------------------------------------*/ 
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+    margin-bottom: 25vh;
+    margin-top: 5vh;
+  }
+  
+  .moclink {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1%;
-    padding: 1%;
-    margin: 0 auto;
-    width: 90%;
-    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Removes the default underline */
+    position: relative; /* Needed for absolute positioning of text */
+  }
+  
+  .moclink img {
+    max-width: 90%; /* Ensures the image does not exceed its container */
+  }
+  
+  .moclink::after {
+    content: attr(data-text);
+    font-size: 150%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the transparency here */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .moclink:hover::after {
+    opacity: 1;
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 6%;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none; /* Ensures the text doesn't interfere with hover */
+  }
+  /* --------------------------------------------------------------------------------------------------------------------------------- */
+  /* CUSTOMS ---------------------------------------------------------------------------------------------------------------------------*/ 
+  
+  .category {
+    margin-bottom: 30px;
 }
 
-.image {
-    scroll-snap-align: center;
-    min-width: 30%;
-    max-width: 40%;
-    height: auto;
-    border: 1px solid #ccc;
-    position: relative;
+.category h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.image img {
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
     width: 100%;
     height: auto;
 }
-
-.image .caption {
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+  /* NATURE PHOTOS ---------------------------------------------------------------------------------------------------------------------------*/ 
+  
+  .grid-container {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+    margin-bottom: 25vh;
+    margin-top: 5vh;
+  }
+  
+  .natphotolink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; /* Removes the default underline */
+    position: relative; /* Needed for absolute positioning of text */
+  }
+  
+  .natphotolink img {
+    max-width: 90%; /* Ensures the image does not exceed its container */
+  }
+  
+  .natphotolink::after {
+    content: attr(data-text);
+    font-size: 150%;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 0.5%;
     text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the transparency here */
     opacity: 0;
     transition: opacity 0.3s ease;
-}
-
-.image:hover .caption {
+  }
+  
+  .natphotolink:hover::after {
     opacity: 1;
-}
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 6%;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none; /* Ensures the text doesn't interfere with hover */
+  }
+  /* --------------------------------------------------------------------------------------------------------------------------------- */
+  /* RESPONSIVITY */
