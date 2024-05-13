@@ -70,7 +70,7 @@ main {
     grid-area: main;
 /*     padding: 20px; */
 /*     margin-top: 20vh; */
-    margin-bottom: 50px; /* a margin hozzáadása, hogy a tartalom ne fedje el a footert */
+    margin-bottom: 5%; /* a margin hozzáadása, hogy a tartalom ne fedje el a footert */
     margin-left: 3%;
     color: #9d6900;
 }
@@ -84,23 +84,26 @@ footer {
     bottom: 0; 
     border-top: 2px solid #a77613;
 }
+        .contacts {
+            margin-right: 5%;
+        }
         .message {
             display: grid;
             grid-area: jobb;
 
             text-align: center;
-            margin-right: 10%;
+            margin-right: 5%;
         }
             .messageszoveg {
                 height: 10vh;
                 background-image: url(./img/envelope\ 0hatter.png);
-                    background-size: contain; /* This line ensures the image fits within the input box */
-                    background-repeat: no-repeat; /* This line prevents the image from repeating */
-                    background-position: right; /* This line centers the image within the input box */
-/*                     opacity: 0.5;
- */            }
+                    background-size: contain; 
+                    background-repeat: no-repeat;
+                    background-position: right;
+                    }
         .footerlink {
             margin-right: 10%;
+            text-decoration: italic;
         }
         .footerbal {
             display: grid;
@@ -123,8 +126,8 @@ footer {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 10px;
-    padding: 10px;
+    gap: 1%;
+    padding: 1%;
     margin: 0 auto;
     width: 90%;
     max-width: 800px;
@@ -132,8 +135,8 @@ footer {
 
 .image {
     scroll-snap-align: center;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 30%;
+    max-width: 40%;
     height: auto;
     border: 1px solid #ccc;
     position: relative;
@@ -151,7 +154,7 @@ footer {
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 5px;
+    padding: 0.5%;
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease;
